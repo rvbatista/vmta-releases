@@ -198,14 +198,17 @@ diagnostics:
 | 0–10 | Discrete Inputs | Component health bits (system, license, modem, SMTP, SCADA…) |
 | 0–25 | Holding Registers | Stats counters, uptime, last alarm timestamp |
 
+Full register reference: [modbus-registers.md](modbus-registers.md)
+
 ---
 
 ## License
 
 A valid license key (`VMTA_LICENSE_KEY` in `.env`) is required for production use. Without it the gateway runs in demo mode: messages are redacted and the process stops after 24 hours.
 
-To get your machine's hardware ID for licensing:
+**To request a license key**, [open a License Request issue](../../issues/new?template=license_request.yml) with your machine ID:
 
 ```
-vmtagateway.exe --show-id
+vmtagateway.exe --show-id     (Windows)
+./vmtagateway --show-id       (Linux)
 ```
