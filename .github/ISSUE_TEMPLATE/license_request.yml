@@ -1,0 +1,35 @@
+name: License Request
+description: Request a license key for VMTA Gateway
+title: "[LICENSE] "
+labels: ["license"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        To generate your license key we need your machine ID.
+        Run the following command and paste the output below:
+        **Windows:** `vmtagateway.exe --show-id`
+        **Linux:** `./vmtagateway --show-id`
+  - type: input
+    id: machine_id
+    attributes:
+      label: Machine ID
+      placeholder: "e.g. A1B2C3D4E5F6..."
+    validations:
+      required: true
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      options:
+        - Windows
+        - Linux
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Installation description
+      placeholder: "Brief description of where this will be deployed (e.g. plant name, city, system type)"
+    validations:
+      required: true
